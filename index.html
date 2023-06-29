@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <select name="" id="selectGrupo" onchange="filtrarMaquinas(this)">
+      <option value="1">grupo 1</option>
+      <option value="2">grupo 2</option>
+    </select>
+    <div class="calendario">
+      <div class="flex flex-row justify-center gap-4 mb-4">
+        <button
+        onclick="semanaAnterior()"
+          type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+        >
+          Anterior
+        </button>
+        <div class="text-center" id="mesCalendario">Mes</div>
+        <button
+            onclick="siguienteSemana()"
+          type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+        >
+          Siguiente
+        </button>
+      </div>
+      <div class="grid grid-cols-12" id="cabezeraCalendario">
+        <div
+          class="col-span-3 border-solid border-slate-700"
+          style="border-width: 1px"
+        >
+          <div
+            class="flex flex-row justify-center items-center"
+            style="height: 100%"
+          >
+            <div>Maquinas</div>
+          </div>
+        </div>
+        <div class="col-span-9">
+          <div class="grid grid-cols-7" id="cabezeraCalendarioDias">
+            <div>lunes</div>
+            <div>mastes</div>
+            <div>miercoles</div>
+            <div>jueves</div>
+            <div>viernes</div>
+            <div>sabado</div>
+            <div>domingo</div>
+          </div>
+        </div>
+      </div>
+      <div id="cuerpoCalendario">
+        <div class="grid grid-cols-12">
+          <div class="col-span-3">fresadora</div>
+          <div class="col-span-9">
+            <div class="grid grid-cols-7">
+              <div>lunes</div>
+              <div>mastes</div>
+              <div>miercoles</div>
+              <div>jueves</div>
+              <div>viernes</div>
+              <div>sabado</div>
+              <div>domingo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div style="
+    width: 100%;
+    height: 26px;
+    background-color: red;
+"></div> -->
+    <script type="text/javascript" src="./moment.min.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+            body: ["Roboto", "sans-serif"],
+            mono: ["ui-monospace", "monospace"],
+          },
+        },
+        corePlugins: {
+          preflight: false,
+        },
+      };
+    </script>
+  </body>
+</html>
